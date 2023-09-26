@@ -1,0 +1,41 @@
+{% extends 'menu.html' %}
+
+
+
+{%block intro_container_out%}
+{%block intro_container_in%}
+{%endblock%}{%endblock%}
+ {%block center_the_content%}
+
+ <form action="" method="get" class="form">
+    <div class="field">
+        <lable class="lable">
+           {{the_user.username}} your code is:
+            <textarea class="textarea" style="font-family: 'code';position: initial;" name="code" id="code" cols="70" rows="30" value="{{code}}">
+                {{code}}
+            </textarea>
+        </lable>
+    </div>
+    <a href="{%url 'home'%}" class="button is-info"> return to menu</a>
+    <a href="{%url 'input_item' user.pk%}" class="button is-info"> return to fillform</a>
+    <br>
+    <div class="column" style="justify-content: center;">
+        <h1 class="subtitle">
+
+            code structure:[CSS] br br br br br br [HTML] br br br br br br [JScode] 
+        </h1>
+        <p class="subtitle is-5">
+            NOTE:You may need to add the js code as External file
+        </p>
+    </div> 
+</form>
+ 
+ 
+ 
+ 
+ {%endblock%}
+  {%block hide_blocks%}
+  {%block container_1%}{%endblock%}
+   {%block container_2%}{%endblock%}
+    {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

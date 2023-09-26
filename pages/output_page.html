@@ -1,0 +1,78 @@
+{% extends 'menu.html' %}
+{%load static%}
+{%block tit%}OUTPUT PAGE{%endblock%}
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+
+ {%block center_the_content%}
+
+ {%if all_websites%}
+
+ 
+ <table class="table" style="overflow-x: scroll;">
+  <thead>
+    <tr>
+      <th>number</th>
+      <th>website name</th>
+      <th>posted in</th>
+      <th>URL</th>
+      <th>visits and timezone</th>
+      <th>Report status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for w_item in all_websites%}
+{{w_item.print_website_owner}}<td><a href="{%url 'statis' w_item.pk%}" class="button_x"> display statis</a></td></tr>
+{%endfor%}
+
+  </tbody>
+</table>
+<section class="hero">
+  <div class="hero-foot" style="">
+    <ul style="flex-direction: row;display: flex;justify-content: center;">
+     {%if all_websites.has_previous%}
+     <a href="?pg={{ all_websites.previous_page_number }} " class="button is-info">previous</a>
+     {%else%}---{%endif%}
+     {%if all_websites.has_next%}
+     <a href=" ?pg={{ all_websites.next_page_number }} " class="button is-info">next</a>
+     {%else%}---{%endif%}
+    </ul>
+
+  </div>
+</section>
+
+
+
+
+
+ 
+{%else%}
+<h1 class="title">
+  No websites to be trakced
+</h1>
+{%endif%}
+
+
+<script>
+
+
+
+
+
+</script>
+
+
+
+ {%endblock%}
+{%block hide_blocks%}
+{%block container_1%}
+
+
+
+{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

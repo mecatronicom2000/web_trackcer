@@ -1,0 +1,48 @@
+{% extends 'menu.html' %}{%load widget_tweaks%}{%load static%}
+
+
+<style>
+   a{text-decoration: none;}
+   
+</style>
+{%block tit%}how to use{%endblock%}
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+ {%block center_the_content%}
+ <div style="top: 250px;">
+   <h1 class="title is-2" style="margin-top: 150px;"> Follow the steps to track the viewers of your website </h1>
+  <div class="columns is-multiline" style="padding: 30px;">
+   <div class="column is-half">
+      <p class="subtitle is-3">1-<a href="{%url 'login'%}">Login</a> to our web site if you had an account, if you don't then <a href="{%url 'register'%}">Register here</a></p>
+      <img src="{%static 'img/spx1.png'%}"  alt="" sizes="" srcset="" class="catalog_img">
+      <p class="subtitle is-6">
+     By making an account your username will be automatically linked to your fill form ,so you can track all viewers related to each website of yours </p>
+   </div>
+   <div class="column is-half">
+      <p class="subtitle is-3">2-Redirecting to a form to fill in your website info </p>
+      <img src="{%static 'img/spx2.png'%}"   alt="" sizes="" srcset="" class="catalog_img">
+      <p class="subtitle is-6">After Logging/making Account you will be redirected to Home page ,then find track a website tab and click on it,you will be sent to the fill form to fill your website breif info as shown.  </p>
+   </div>
+   <div class="column is-half">
+      <p class="subtitle is-3">3-You will be redirect to a page witch containes The track code</p>
+      <img src="{%static 'img/spx3.png'%}"  alt="" sizes="" srcset="" class="catalog_img">
+      <p class="subtitle is-6">After filling breif info of your web site you will be directed to a page code that is a combination of Web code(HTML,CSS,JavaScript) </p>
+   </div>
+   <div class="column is-half">
+      <p class="subtitle is-3">4-Past the code into your website</p>
+      <img src="{%static 'img/track_my_site.jpg'%}"  alt="" sizes="" srcset="" class="catalog_img">
+      <p class="subtitle is-6">Add that code to your footer part of your web site .<span style="color: red;">REMEMBER:</span>the JavaScript code should be added to an external js_file to track viwewrs</p>
+   </div>
+
+  </div>
+ </div>
+ 
+{%endblock%}
+{%block hide_blocks%}
+{%block container_1%}{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}
+     {%block container_4%}{%endblock%}{%endblock%}

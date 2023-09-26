@@ -1,0 +1,10 @@
+#nav-sidebar .module th {background-color: antiquewhite;}
+
+
+tr .model-group{background-color: aqua;}
+
+
+element.style {
+}
+tr:nth-child(odd){background-color: blue;}
+

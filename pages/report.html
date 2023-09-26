@@ -1,0 +1,38 @@
+{% extends 'menu.html' %}
+{%load static%}
+
+
+{%block tit%}REPORT{%endblock%}
+
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+
+ {%block center_the_content%}
+<table class="table">
+  <thead>
+    <tr>
+      <th>number</th>
+      <th>website name</th>
+      <th>the logo</th>
+      <th>URL</th>
+      <th>visits and timezone</th>
+      <th>report</th>
+    </tr>
+  </thead>
+  <tbody>
+{{the_item.print_website_owner}}
+<td><a href="{%url 'statis' the_item.pk%}" class="button is-info"> display statis</a></td></tr>
+  </tbody>
+</table>
+
+
+
+ {%endblock%}
+{%block hide_blocks%}
+{%block container_1%}{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

@@ -1,0 +1,42 @@
+{% extends 'menu.html' %}
+{%load static%}
+
+
+{%block tit%}OWNER REPORT{%endblock%}
+
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+
+ {%block center_the_content%}
+
+ 
+  <table class="table" style="margin-top: 300px;">
+    <thead>
+      <tr>
+        <th>number</th>
+        <th>website name</th>
+        <th>posted in</th>
+        <th>URL</th>
+        <th>visits and timezone</th>
+        <th>static</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for w_user in owner_w%}
+  {{w_user.print_website_owner}}<td><a href="{%url 'statis' w_user.pk%}" class="button_x"> display statis</a></td></tr>
+  {%endfor%}
+    </tbody>
+  </table>
+  
+
+
+
+{%endblock%}
+{%block hide_blocks%}
+{%block container_1%}{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

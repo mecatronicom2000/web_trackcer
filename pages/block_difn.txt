@@ -1,0 +1,16 @@
+{%block for_branding_desktop%} {%block for_branding_mobile%}
+
+
+{%endblock%}{%endblock%}
+
+
+
+{%block intro_container_out%}
+{%block intro_container_in%}
+{%endblock%}{%endblock%}
+ {%block center_the_content%}{%endblock%}
+  {%block hide_blocks%}
+  {%block container_1%}{%endblock%}
+   {%block container_2%}{%endblock%}
+    {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

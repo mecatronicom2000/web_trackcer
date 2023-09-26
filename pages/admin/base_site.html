@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+{% block title %}Web Site tracker{% endblock %}
+{% block extrastyle %}
+<meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'css/bulma/bulma-rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma-rtl.css.map' %}"> 
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma-rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}"/>
+{% endblock %}
+{% block branding %}
+   
+<div style="align-items: center;justify-content: flex-end;display: flex;">
+    <img src="{%static 'img/track.png'%}" alt="" width="64px" height="64px" srcset="">
+    <h1 class="title" style="font-family: Cairo;font-size: 30px;color: #000;">Web Site tracker</h1>
+    </div>
+    </h1>
+{% endblock %}
+{% block nav-global %}{% endblock %}

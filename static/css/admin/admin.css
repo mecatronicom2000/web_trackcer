@@ -1,0 +1,51 @@
+#header{background-color: rgb(235, 199, 155);color: black;}
+#head{background-color: rgb(235, 199, 155);color: rgb(255, 255, 255);}
+
+
+.module h2,
+.module caption,.selector-chosec h2,
+.inline-group h2{
+    background-color: rgb(235, 199, 155);color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+div.breadcrumbs{
+    background-color: rgb(158, 100, 29);color: rgb(255, 248, 248);
+    border-radius: 30px;
+}
+
+
+.button:active,
+input[type=submit]:active
+input[type=button]:active
+.button:hover,
+input[type=submit]:hover
+input[type=button]:hover
+.button:focus,
+input[type=submit]:focus
+input[type=button]:focus,
+.default,.submit-row input.default,.button, input[type=submit]
+{
+    background-color: rgb(36, 23, 7);color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

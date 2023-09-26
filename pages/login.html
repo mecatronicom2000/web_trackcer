@@ -1,0 +1,34 @@
+{% extends 'menu.html' %}{%load static%}
+
+{%block tit%}LOGIN PAGE{%endblock%}
+
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+
+{%block center_the_content%}
+<figure class="image is-64x64" style="border: none;">
+  <img src="{%static 'img/u12.jpg' %}" alt="" class="is-rounded"/>      
+</figure> {%include 'form_model.html'%}
+<a href="{%url 'register'%}" class="">click here to make a new account</a>
+{%endblock%}
+{%block hide_blocks%}
+{%block container_1%}{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+

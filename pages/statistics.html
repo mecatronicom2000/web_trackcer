@@ -1,0 +1,71 @@
+{% extends 'menu.html' %}
+{%load static%}
+{%block tit%}statistic page{%endblock%}
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+
+ {%block center_the_content%}
+<table class="table" style="overflow-y: scroll;">
+    <h1 class="title">{{target.website_name}}</h1>
+    <thead>
+        <th>key item</th>
+        <th>last tracking</th>
+        <th>visits</th>
+        
+    </thead>
+    <tbody>
+       
+        
+        {%for track_x in pages%}
+            <tr>
+              <td>{{track_x.pk}}</td>
+              <td>
+               
+                <small class="post_v"></small>
+                <script>
+                  
+                  document.querySelector(".post_v").innerHTML=Date.toLocaleString("en-US",{timeZone:'Asia/Kolkata',timeStyle:'medium',hourCycle:'h24'});
+                </script>
+              </td>
+              <td>{{track_x.writing_number_of_visits}}</td>
+            </tr>
+        {%endfor%}
+        
+    </tbody>
+    
+        
+   
+</table>
+<div class="pagination" role="navigation" aria-label="pagination" >
+            
+            
+            <ul class="pagination-list" style="justify-content: center;font-size: 20px;">
+              {%if pages.has_next%}
+                <li>
+                <a class="pagination-next" href="?page={{ pages.next_page_number }}">Next page</a>
+              </li>{%else%}--{%endif%}
+              <li>
+                <span class="current">
+                    Page {{ pages.number }} of {{ pages.paginator.num_pages }}.
+                </span>
+              </li>
+              {%if pages.has_previous%}
+              <li>
+                <a class="pagination-previous" href="?page={{ pages.previous_page_number }}">Previous</a>
+              </li>{%else%}--{%endif%}
+            </ul>
+        </div>
+
+ {%endblock%}
+{%block hide_blocks%}
+{%block container_1%}
+
+
+
+{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

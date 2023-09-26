@@ -1,0 +1,76 @@
+{% extends 'menu.html' %}{%load static%}
+
+
+{%block tit%}add a website{%endblock%}
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}
+<style>
+
+  *{position: initial;}
+</style>
+{%endblock%}
+
+ {%block center_the_content%} 
+ <h1 class="title">Add your website data</h1>
+ 
+ <form action="" method="post" class="form" style="position: initial;background-color: rgb(182, 182, 182);border-radius: 10px;padding: 20px;" novalidate>
+  {%csrf_token%}
+  <div class="field">
+    <lable class="lable" for="logox">
+    <figure class="image is-128x128" style="border: none;position: initial;">
+   <img src="{%static 'img/track_my_site.jpg'%}" alt="" class="is-rounded" id="output_img"/>      
+   add your logo
+  </figure>
+      <input type="file" name="logox" id="logox" class="input" style="position: initial;"/>
+    </lable>
+  </div>
+  <div class="field" style="display: none;">
+    <lable class="lable">
+      your username
+      <input type="text" name="username" id="username" class="input" value="{{user.username}}" style="position: initial;"/>
+      <small>if  UR logged in you can see your username above</small>
+    </lable>
+  </div>
+  <div class="field">
+    <lable class="lable">
+      website name
+      <input type="text" name="name" id="name" class="input" style="position: initial;"/>
+    </lable>
+  </div>
+  <div class="field">
+    <lable class="lable">
+      Add website URL
+      <input type="url" name="x_url" id="x_url" class="input"  style="position: initial;"/>
+    </lable>
+  </div>
+  <div class="field">
+    <button type="submit" class="button is-success">add data</button>
+  </div>
+
+ </form>
+ <script>
+
+
+/*
+
+var input_img=document.getElementById("logo")
+var output_img=document.getElementById("output_img")
+input_img.onchange=function(act){
+  output_img.src=URL.createObjectURL(input_img.files[0])
+}
+*/
+
+ </script>
+ {%endblock%}
+{%block hide_blocks%}
+{%block container_1%}{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}
+
+
+
+     

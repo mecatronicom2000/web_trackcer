@@ -1,0 +1,430 @@
+{%load static%}{% load hitcount_tags %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'css/bulma/bulma-rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma-rtl.css.map' %}"> 
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma-rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bulma/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate/animate.compat.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate/a1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grid_and_styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/w1.svg'%}" >
+    
+   
+    
+      <title>{%block tit%}HOME PAGE{%endblock%}</title>
+</head>
+<style>
+.button_x{color: #ffffff;background-color: #000000;padding: 10px;border-radius: 10px;font-family: 'Cairo';}
+.image_cont{border-radius: 20px; border: 0.2em #000 solid;position: initial;width: 160px;height: 160px;}
+.button_x:hover{background-color: #ffffff;padding: 10px;border-radius: 10px;font-family: 'Cairo';border-color: #000;}
+#id_logo::before{background-color: #ff0000}
+.center{display: flex;justify-content: center;align-items: center;}
+.tabs li {display: flex;justify-content: flex-end;}
+.tabs li a{color: #ffffff;background-color: #000000;border: none;}
+.counter_now{top: 150px;text-align: center;background-color: #005bc4;color: #fff;align-items: center;border-radius: 20px;padding: 30px;font-size: 10px;
+}
+footer div h1 {}
+.tabs li a:hover{color: #000000;background-color: #ffffff;border: none;}
+.navbar-item:hover{color: #ffffff;background-color: #000000;}
+ h1 .title{color:white;background-color: #00000070;padding: 20px;border-radius: 20px;}
+.hero .is-fullheight .is-fullwidth .center{color: rgb(16, 141, 0);}
+.adjusted_menu{background-color: white;border: 2px #000 solid;flex-direction: column;text-align: center;}
+.image .the_brand{border-radius: 20px;display: inline;width: 64px;height: 64px;}
+.catalog_img{border: 10px rgb(255, 187, 0) solid;border-radius: 15px; width: 350px;height: 350px;background-size: contain;}
+.footer_model{padding: 30px;flex-direction: column;justify-content: center;align-items: center;display: flex;background-color: #4b4b4b;}
+.is-hidden-desktop{font-size: 15px;font-weight: 10px;}
+.table td{text-align: center;}
+</style>
+<body> 
+<nav class="level is-hidden-touch" style="position: fixed;background-color: #000000;width: 100%;max-height: fit-content;color: #ffffff;">
+  {%block for_branding_desktop%}
+  <div class="level-left">
+    <li type="none" style="padding: 0.2px;">
+        <a href="{%url 'home'%}"  style="width: fit-content;height: fit-content;">
+          <img src="{%static 'img/w1.svg'%}"  width="80px" height="80px">      
+      </a>
+      </li>
+      
+   
+  </div>
+  
+    <div class="level-right" >
+      <ul class="tabs" style="justify-content: end;flex-direction: row;">
+        <li class="navbar-item"><a href="{%url 'about'%}">About</a></li>
+        {%if user.is_authenticated%}
+    <li class="navbar-item"><a href="{%url 'input_item' user.pk%}">Track a website</a></li>
+   
+    {%else%}<li class="navbar-item"><a href="{%url 'login'%}">Track a website</a></li>
+    
+    {%endif%}
+        {%if user.is_authenticated and user.is_staff%}
+        <li class="navbar-item"><a href="{%url 's_report' user.pk %}">my website report</a></li>
+        
+        {%else%}
+        <li class="navbar-item"><a href="{%url 'output_page'%}">display tracked websites</a></li>
+        
+        {%endif%}
+        <li class="navbar-item"><a href="{%url 'output_page'%}">see our visits</a></li>
+        <li class="navbar-item"><a href="#contacts">contacts</a></li>
+        {%if user.is_authenticated%}
+        <li class="navbar-item" style="">
+          
+            <figure style="text-align: center;flex-direction: column;background-color: #ffffff;border-radius: 5px;">
+              <span>{{user.username}}</span>
+              <img src="{%static 'img/u12.jpg'%}" class="is-rounded" style="align-self: center;"/>
+               
+              <span><a href="{%url 'login'%}" class="button is-info">NOT ME</a></span>
+                
+              
+            </figure>
+              
+                    
+         
+        </li>
+        {%else%}
+        <li class="navbar-item" style="display: flex;flex-direction: column;">
+          <li>vistor </li>
+          <a href="{%url 'login'%}" class="button is-info">Log in</a>
+        </li>
+        {%endif%}
+        
+      </ul>
+  </div>
+ 
+  {%endblock%}
+</nav>
+<nav class="is-hidden-desktop is-fullwidth" style="position: fixed;background-color: #000000;width: 100%;max-height: fit-content;color: rgb(255, 254, 253);">
+ 
+ {%block for_branding_mobile%}
+  <div class="columns is-mobile">
+    <div class="column is-half" style="justify-content: center;">
+      <a href="{%url 'home'%}" class="image is-64x64 " style="border: none;">
+        <img src="{%static 'img/w1.svg'%}" width="100px" height="100px" />      
+    </a> </div>
+    <div class="column is-half" style="display: flex;justify-content: end;">
+    <button class="button is-normal" style="align-self: center;background-color: #00000000;color: #ffffff;border: none;"  onclick="call_menu_tab();">menu</button>
+    </div>
+  </div>
+ {%endblock%}
+   
+ </nav>
+
+  <div class="is-hidden-desktop"  style="position: fixed;top: 70px;right:0px;">
+
+  <ul class="adjusted_menu animate__animated animate__backOutRight" id="menu_x" style="display: none;">
+    {%if user.is_authenticated%}
+        <li class="navbar-item" style="display: flex;flex-direction: column;">
+          
+            <figure style="display: flex;flex-direction: column;">
+              <li>{{user.username}}</li>
+              <img src="{%static 'img/u12.jpg'%}" class="is-rounded" style="align-self: center;"/>
+               
+              <caption>
+                <li><a href="{%url 'login'%}">NOT ME</a></li>
+              </caption>
+            </figure>
+              
+                    
+         
+        </li>
+        {%else%}
+        <li class="navbar-item">
+          <li>vistor</li>
+          <a href="{%url 'login'%}">Log in</a>
+        </li>
+        {%endif%}
+    <li class="navbar-item"><a href="{%url 'about'%}">About</a></li>
+    {%if user.is_authenticated%}
+    <li class="navbar-item"><a href="{%url 'input_item' user.pk%}">Track a website</a></li>
+   
+    {%else%}<li class="navbar-item"><a href="{%url 'login'%}">Track a website</a></li>
+    
+    {%endif%}
+    {%if user.is_authenticated and user.is_staff%}
+    <li class="navbar-item"><a href="{%url 'details' user.pk %}">my website report</a></li>
+    
+    {%else%}
+    <li class="navbar-item"><a href="{%url 'output_page'%}">display tracked websites</a></li>
+    
+    {%endif%}
+    <li class="navbar-item"><a href="{%url 'output_page'%}">see our visits</a></li>
+    <li class="navbar-item"><a href="#contacts">contacts</a></li>
+  
+    
+  </ul>
+
+</div> 
+
+
+
+
+
+
+
+
+{%block intro_container_out%}
+<section id="top_side" class="hero is-fullheight is-fullwidth center" style="background-size: cover;background-image:url('/static/img/track_my_site.svg');" id="head_1">
+ {%block intro_container_in%}
+ <div class="" style="position: initial;color: #fff;background-color: #0000006b;padding: 30px;border-radius: 20px;justify-content: center;text-align: center;">
+  
+  <h1 class="title" style="font-family: 'Cairo';color: #fff;">Hello Counter</h1>
+  <p class="subtitle" style="font-family: 'Cairo';color: #fff;">the best web site counter in Egypt</p>
+  <a href="#count_x" class="button is-info" style="position: initial;">how many vistors...?</a>
+ </div>
+  
+{%endblock%}
+
+</section>{%endblock%}
+<section class="hero is-fullheight is-fullwidth center" >
+  
+   <center>
+    {%block center_the_content%}
+      <div class="columns" style="align-content: start;">
+        <div class="column is-half">
+          <img src="{% static 'img/find_ws.svg'%}" alt="" width="400px" height="200px" srcset="">
+        </div>
+        <div class="column is-half">
+          <div style="align-content: end;">
+            <h1 class="title" >Track any website from any place</h1>
+            <p class="subtitle" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sunt hic ipsum, nostrum assumenda quae odio quia rem blanditiis nesciunt, laboriosam quasi ducimus! Sunt atque facere quod, voluptatem et quibusdam!</p>
+            {%if user.is_authenticated%}
+            <a class="button_x" style="background-color: #000;color: #ffffff;" href="{%url 'input_item' user.pk%}">Track a website</a>
+           
+            {%else%}<a class="button_x" style="background-color: #000;color: #ffffff;" href="{%url 'login'%}">Track a website</a>
+            
+            {%endif%}
+          </div>
+         
+        </div>
+      </div>
+      {%endblock%}
+   </center>
+      
+
+    
+
+  
+</section>
+  {%block hide_blocks%}
+<section class="hero is-fullheight is-fullwidth center">
+  <center>
+  {%block container_1%}
+  <div class="columns" style="align-content: start;">
+    <div class="column is-half">
+      <img src="{% static 'img/stat20.svg'%}" alt="" width="400px" height="200px" srcset="">
+    </div>
+    <div class="column is-half">
+      <div style="align-content: end;">
+        <h1 class="title" >Preform a static overview display</h1>
+        <p class="subtitle" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sunt hic ipsum, nostrum assumenda quae odio quia rem blanditiis nesciunt, laboriosam quasi ducimus! Sunt atque facere quod, voluptatem et quibusdam!</p>
+     <a class="button_x" style="background-color: #000;color: #ffffff;">Read more</a>
+      </div>
+     
+    </div>
+  </div>
+  {%endblock%}</center>
+
+</section>
+<section class="hero is-fullheight is-fullwidth center">
+  
+  {%block container_2%}
+  <h1 class="title is-3" id="title" style="text-align: center;">Our clients </h1>
+  <div class="columns is-multiline" style="justify-content: center;bottom: 100px;overflow: auto;">
+    
+   
+    {%for w_item in all_websites%}
+ 
+  <div style="margin: 10px;background-image: url('{{w_item.logo}}');width: 300px;border: 3px solid #000;border-radius: 30px;flex-direction: row;">
+    
+    <a href="{%url 'details' w_item.pk%}" style="padding: 20px;">
+      <h1 class="title is-3" id="i{{w_item.pk}}" style="color: white;text-align: center;background-color: #000;padding: 20px;">{{w_item.website_name}}</h1>
+    </a>
+ 
+  </div>
+
+  
+  {%endfor%}
+  
+  
+   
+    
+   </div>
+  {%endblock%}
+</section>
+<section class="hero is-fullheight is-fullwidth center is-fullwidth">
+  {%block container_3%}
+  <div style="justify-content: center;">
+    <div class="columns is-fullwidth" style="text-align: center;font-size: 15px;">
+      <div class="column is-thrid">
+      <div style="align-content: center;"> 
+          <p class="subtitle is-5">Track Your visitors</p>
+        <div class="box">  
+          <img src="{%static 'img/track_my_site2.svg'%}" alt="track_my_site" class="image_cont">
+        </div>
+      </div>
+       
+       </div>
+      <div class="column is-thrid" >
+        <div style="justify-content: center;">
+ <p class="subtitle is-5">Make your mathimatics</p>
+        <div class="box"> 
+        <img src="{%static 'img/track_my_site.svg'%}" alt="track_my_site" class="image_cont">
+      </div>
+        </div>
+       
+      </div>
+      <div class="column is-thrid"  >
+        <div style="justify-self: center;">
+         <p class="subtitle is-5">Display any time,any place</p>
+        <div class="box"> 
+        <img src="{%static 'img/track_my_site3.jpg'%}" alt="track_my_site" class="image_cont">
+        <small style="font-family: Cairo;">
+        your visit counts are 
+        </small>
+      </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  {%endblock%}
+</section>
+{%endblock%} {%block container_4%}
+<section class="hero is-fullheight is-fullwidth center">
+ 
+ 
+
+  
+
+ 
+</section> {%endblock%}  
+
+<footer  class="hero is-halfheight" style="align-items: center;background-color: #4b4b4b;color: #fff;visibility: visible;">
+ 
+  <div  onchange="change_the_bk();" class="counter_now" id="counter_area" draggable="false">
+    <lable class="lable" for="model_color">adjust color:<input type="color" name="model_color" id="model_color" /></lable>
+    <lable class="lable" for="model_color">adjust text:<input type="number" name="model_text" id="model_text" /></lable>
+    
+   
+    
+    <h1 style="font-family: 'Cairo';font-size: 20px;color: #fff;" id="count_x">now vistors of my site accroding to local timezone are</h1>
+   <p class="subtitle"><span class="view_1" id="v_result" data-goal="">0</span> at <small class="view_2" style="font-size: 15px;" id="get_tz" >hhh</small></p>
+    
+   
+    
+    </div>
+    
+   <a href="#top_side" style="background-color: #005bc4;border: 1.2px #ffffff solid;" id="contacts" class="button is-danger">{{g_ip}}</a>
+
+  
+<!--    
+    <lable class="lable" for="model_color">add a color:<input type="color" name="model_color" id="model_color" /></lable>
+      <lable class="lable" for="model_color">add a logo:<input type="file" name="model_img" id="model_img" /></lable>
+  
+    <img src="{%static 'img/w1.svg'%}" onchange="change_brand();" id="brand_style" width="64px" height="64px" class="the_brand">
+   
+    --> 
+ 
+ 
+   
+</footer>
+
+
+
+
+
+
+
+
+
+
+<script src="{%static 'js/js3.js'%}"></script>
+
+
+  
+<script>
+  
+var model_color=document.getElementById("model_color");
+ document.getElementById('contacts').style.backgroundColor=window.localStorage.getItem('bkg_model');
+ document.getElementById('counter_area').style.backgroundColor=window.localStorage.getItem('bkg_model');
+ document.getElementById('count_x').style.fontSize=window.localStorage.getItem('key_font');
+ document.getElementById('v_result').style.fontSize=window.localStorage.getItem('key_font');
+console.log("localhost featch results");
+
+
+
+function move_action(){
+  if (drag_me) {
+    counter_area.style.position="absolute";
+    counter_area.style.left=window.event.clientX;
+    counter_area.style.top=window.event.clientY;
+    
+  } else {
+    console.log("NONE move");
+    document.getElementById('counter_area').style.position="relative";
+  }
+
+}
+
+
+ //document.getElementById("id_logo").style.display='none';
+ //document.getElementById("id_logo").style.backgroundColor='red';
+ 
+ 
+
+ //getting the timezone accroding to the host's country
+  const get_tz=document.getElementById('get_tz');
+  const date_model=new Date();
+  const offset=date_model.getTimezoneOffset();
+  const str_date=Intl.DateTimeFormat().resolvedOptions().timeZone;
+  get_tz.innerHTML=str_date;
+
+
+  
+  function call_menu_tab() {
+   
+    
+    if (document.getElementById("menu_x").style.display=="none") {
+      console.log("show menu");
+      document.getElementById("menu_x").style.display="flex";
+      document.getElementById("menu_x").className="adjusted_menu animate__animated animate__backInRight";
+      
+    }
+    else {
+      console.log("hide menu");
+      
+      document.getElementById("menu_x").className="adjusted_menu animate__animated animate__backOutRight";
+      document.getElementById("menu_x").style.display="none";
+    }
+    
+    
+    
+  }
+
+function change_the_bk() {
+   document.getElementById('counter_area').style.backgroundColor=window.localStorage.setItem('bkg_model',model_color.value);
+   document.getElementById('contacts').style.backgroundColor=window.localStorage.setItem('bkg_model',model_color.value);
+  document.getElementById("count_x").style.background=window.localStorage.setItem('key_font',model_text.value+"px");
+  document.getElementById("v_result").style.fontSize=window.localStorage.setItem('key_font',model_text.value+"px")
+}
+
+function change_brand() {
+  brand_style.src=URL.createObjectURL(model_img.files[0]);
+  console.log("display img ");
+  console.log(model_img.files[0]);
+}
+
+</script>
+
+
+</body>
+</html>
+

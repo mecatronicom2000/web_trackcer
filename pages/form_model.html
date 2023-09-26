@@ -1,0 +1,41 @@
+{%load static%}
+{%load widget_tweaks%}
+<style>
+      li{font-size: 10px;}
+</style>
+<body>
+      {%block center_the_content%}
+     <center style="top:30px">
+      <form method="post" class="form" novalidate style="background-color: rgb(212, 212, 212);padding: 20px;border-radius: 20px;">
+            {%csrf_token%}
+      {%for f in form%}
+      <div class="field">
+      {{f.label_tag}}
+      {%if form.is_bound%}
+      {%if f.errors%}
+      {% render_field f class="input is-danger" style="position: initial;"%}
+      {%for e in fields.error%}
+      <small class="subtitle">{{e}}</small>
+      {%endfor%}
+      {%else%}
+      {% render_field f class='input is-success' style="position: initial;"%}
+      {%endif%}
+      {%else%}
+      {%render_field f class=' input' style="position: initial;"%}
+      {%endif%}
+      {%if f.help_text%}
+      <p style="font-size: 10px;">{{f.help_text}}</p>
+      {%endif%}
+            
+      </div>
+      
+      {%endfor%}
+
+      <button class="button is-success">post data</button>
+
+
+</form>
+</center> {%endblock%}
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+{% extends 'menu.html' %}
+{%load static%}
+
+
+{%block tit%}REPORT{%endblock%}
+
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+
+ {%block center_the_content%}
+
+ <div class="columns is-multiline" style="justify-content: center;bottom: 100px;">
+
+
+
+  <div class="card" style="position: initial;">
+    <div class="card-header">
+      <h1 class="title is-4" style="text-align: center;">{{the_item.website_name}}</h1>
+    </div>
+    <div class="card-image" style="bac">
+      <figure class="image is-1by1" >
+        <img src="{{the_item.logo.url}}"   alt="{{the_item.website_name}}" class="image"  >
+      </figure>
+    </div>
+    <div class="card-content">{{the_item.counting_number_of_visits}}
+      <a href="{{the_item.the_url}}"  class="button is-info">visit site</a>
+    </div>
+    <div class="card-footer">
+      <h1 class="title is-7" style="color: #000;">posted in {{the_item.posted_in}}</h1>
+    </div>
+  </div>
+
+  
+
+
+
+ 
+  
+ </div>
+
+
+
+
+
+
+ {%endblock%}
+{%block hide_blocks%}
+{%block container_1%}{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

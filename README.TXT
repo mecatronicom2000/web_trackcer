@@ -1,0 +1,2 @@
+-this project has to be work on a python virtual environment
+-to call a virtual environment :python -m venv env_n

@@ -1,0 +1,15 @@
+{
+    "domains":[
+        "https://web.whatsapp.com/"
+    ],
+    "countries": ["US"],
+    "metrics":[
+        "all_traffic_visits"
+    ],
+    "start_date": "2022-12-01",
+    "end_date": "2023-01-01",
+    "granularity": "daily", 
+    "delivery_method": "download_link",
+    "response_format": "json",
+    "webhook_url": "foo.com"
+}

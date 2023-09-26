@@ -1,0 +1,47 @@
+<form action="" method="post" class="form" novalidate>
+  {%csrf_token%}
+<div class="field">
+  
+    <lable class="lable" id="lable_for_img">
+      <figure class="image is-128x128" style="border: none;">
+   <img src="{%static 'img/u12.jpg' %}" alt="" class="box is-rounded" id="user_img"/>
+   
+  </figure> 
+      
+    {% render_field form.img_profile class='column input'%}</lable>
+  </div>
+  <div class="field">
+  <lable class="lable">Username
+  {% render_field form.username class='column input'%}</lable></div>
+
+    <div class="field">
+      <lable class="lable">password
+      {% render_field form.username class='column input'%}</lable>
+    </div>
+      <div class="field">
+        <lable class="lable">Confirm password
+        {% render_field form.username class='column input'%}</lable>
+      </div>
+      <div class="field">
+        <label for="id_is_staff">
+          {% render_field form.is_staff class='checkbox'%} track my web site</label>
+        
+      </div>
+        <button type="submit" class="button is-success">Posting the data</button>
+
+        <script>
+        document.getElementById("id_img_profile").style.display="block";
+          
+        let img_profile=document.getElementById("user_img");
+        let input_img_profile=document.getElementById("id_img_profile");
+            input_img_profile.onchange=function()
+            {
+            img_profile.src=URL.createObjectURL(input_img_profile.files[0]);
+            console.log("image added");
+
+
+            
+          
+          }
+        </script>
+</form>

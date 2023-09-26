@@ -1,0 +1,25 @@
+{% extends 'menu.html' %}
+{%load static%}
+{%block tit%}Not found 404{%endblock%}
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+
+ {%block center_the_content%}
+ <h1 class="title">The page that you are looking for is not found</h1>
+ 
+ <img src="{%static 'img/e404.svg'%}" alt="e404" width="500px"  height="500px"/>
+ {%for e_item in e%} <small class="subtitle is-4"><br>{{e_item}}</small>{%endfor%}
+
+ {%endblock%}
+{%block hide_blocks%}
+{%block container_1%}
+
+
+
+{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

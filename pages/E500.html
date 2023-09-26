@@ -1,0 +1,26 @@
+{% extends 'menu.html' %}
+{%load static%}
+{%block tit%}internal Server Erorr 500{%endblock%}
+
+
+
+{%block intro_container_out%}{%endblock%}
+{%block intro_container_in%}{%endblock%}
+
+ {%block center_the_content%}
+
+ <h1 class="title">A server issue was mentiond and it is under fixing</h1>
+ <img src="{%static 'img/e500.svg'%}" alt="e404" width="500px"  height="500px"/>
+ 
+ <small class="subtitle is-4"><br>{{e}}</small>
+
+ {%endblock%}
+{%block hide_blocks%}
+{%block container_1%}
+
+
+
+{%endblock%}
+ {%block container_2%}{%endblock%}
+  {%block container_3%}{%endblock%}{%endblock%}
+     {%block container_4%}{%endblock%}

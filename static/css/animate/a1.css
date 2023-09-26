@@ -1,0 +1,21 @@
+.intro_header{
+ animation-name: action;
+ animation-duration: 5s;
+ animation-iteration-count: infinite;
+}
+
+@keyframes action {
+   0%{color: rgba(178, 34, 34, 0);}
+   50%{color: rgb(255, 255, 255);}
+   100%{color: rgba(178, 34, 34, 0);}  
+}
+
+.bkg_anim{
+   animation: bkg 20s infinite reverse;
+}
+
+@keyframes bkg {
+   10%{background-image: url('book3.jpg');}
+   50%{background-image: url('book4.jpg');}
+   100%{background-image: url('book5.jpg');}
+}
